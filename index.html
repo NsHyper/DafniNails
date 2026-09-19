@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f8f6f3">
+<meta name="description" content="Δημιούργησε κομψά beauty stories, ανακοινώσεις και κάρτες διαθεσιμότητας. Δωρεάν εξαγωγή PNG, χωρίς εγγραφή.">
+<title>Dafni Nails — Beauty Story Maker</title>
+<style>
+
+
+:root {
+ --color-paper:oklch(97.4% .006 70); --color-surface:oklch(99.2% .003 70); --color-ink:oklch(29% .021 25);
+ --color-muted:oklch(51% .022 30); --color-accent:oklch(47% .073 18); --color-soft:oklch(93% .021 20);
+ --color-line:oklch(88% .013 50); --color-stage:oklch(93.5% .012 65); --color-success:oklch(42% .048 145);
+ --color-error:oklch(44% .14 25); --color-shadow:oklch(30% .03 30 / .12);
+ --font-display:Georgia,'Times New Roman',serif; --font-body:'Avenir Next',Avenir,'Segoe UI',Arial,sans-serif;
+ --space-xs:4px; --space-sm:8px; --space-md:16px; --space-lg:24px; --space-xl:32px; --space-2xl:48px;
+ --radius-sm:6px; --radius-md:10px; --ease-out:cubic-bezier(.2,.7,.2,1); --dur-fast:160ms;
+}
+*{box-sizing:border-box}html,body{margin:0;overflow-x:clip}body{background:var(--color-paper);color:var(--color-ink);font-family:var(--font-body);font-size:14px;line-height:1.5}
+button,input,textarea,select{font:inherit}button,a,input,textarea,select{-webkit-tap-highlight-color:transparent}button{cursor:pointer;color:inherit}button,a{white-space:nowrap}button{transition:transform var(--dur-fast) var(--ease-out)}button:active:not(:disabled){transform:translateY(1px)}button:disabled{opacity:.5;cursor:not-allowed}
+:focus-visible{outline:2px solid var(--color-accent);outline-offset:4px}h1,h2,h3,p{margin:0}h1,h2,h3{font-weight:500;min-width:0;overflow-wrap:anywhere}h1{font-family:var(--font-display);font-size:clamp(29px,3vw,38px);letter-spacing:-1.1px;line-height:1.2}h2{font-size:15px}a{color:inherit}svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}[hidden]{display:none!important}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip{position:absolute;top:-60px;left:16px;z-index:20;background:var(--color-surface);padding:12px}.skip:focus{top:10px}
+.header{border-bottom:1px solid var(--color-line);background:var(--color-surface)}.header-inner{max-width:1500px;margin:auto;min-height:84px;padding:16px 40px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px}.brand-mark{width:37px;height:43px;color:var(--color-accent);stroke-width:1.05}.brand-name{font-family:var(--font-display);font-size:26px;letter-spacing:-.7px;line-height:1.1}.brand-caption{font-size:9px;letter-spacing:2.5px;color:var(--color-muted);margin-top:5px}.header-note{color:var(--color-muted);font-size:12px;display:flex;gap:8px;align-items:center}.header-actions{display:flex;gap:10px;align-items:center}.button{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:43px;padding:10px 18px;border:1px solid var(--color-line);border-radius:var(--radius-sm);background:var(--color-surface);font-size:12px;font-weight:600;text-decoration:none}.button.primary{background:var(--color-accent);color:var(--color-surface);border-color:var(--color-accent)}.button.quiet{border-color:transparent;background:transparent;color:var(--color-muted)}.button.small{padding:7px 11px;min-height:38px;font-size:11px}.icon-button{width:36px;min-height:40px;padding:8px;border:0;background:transparent;border-radius:6px;display:grid;place-items:center;color:var(--color-muted)}
+main{max-width:1420px;margin:0 auto;padding:34px 40px 20px}.intro{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:30px}.intro p{color:var(--color-muted);font-size:13px;margin-top:10px}.local-status{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--color-muted);padding-bottom:4px}.status-dot{width:6px;height:6px;border-radius:50%;background:var(--color-success);flex-shrink:0}.workspace{display:grid;grid-template-columns:440px minmax(0,1fr);border:1px solid var(--color-line);border-radius:12px;overflow:hidden;background:var(--color-surface)}
+.editor{display:flex;flex-direction:column;min-width:0;border-right:1px solid var(--color-line)}.editor-top{padding:23px 26px 0}.editor-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.editor-title>span{font-size:10px;letter-spacing:1.2px;color:var(--color-muted)}.tabs{display:flex;gap:26px;border-bottom:1px solid var(--color-line)}.tab{padding:0 0 14px;border:0;background:none;color:var(--color-muted);font-size:12px;min-height:38px;display:flex;gap:7px;align-items:center;position:relative}.tab svg{width:15px;height:15px}.tab[aria-selected=true]{color:var(--color-accent);font-weight:600}.tab[aria-selected=true]:after{content:'';height:2px;position:absolute;bottom:-1px;left:0;right:0;background:var(--color-accent)}.panel{padding:24px 26px 28px;height:615px;max-height:615px;min-height:0;flex:1 1 auto;overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--color-line) transparent}.field{display:block;margin-bottom:18px}.field-label,label>span:first-child{display:block;font-size:11px;font-weight:600;margin-bottom:7px}.optional{color:var(--color-muted);font-size:10px;font-weight:400;float:right}.field input,.field textarea,.field select,.day-row input,.format-select{width:100%;border:1px solid var(--color-line);background:var(--color-surface);color:var(--color-ink);border-radius:var(--radius-sm);padding:10px 12px;min-height:42px;outline-offset:2px;font-size:12px}.field textarea{resize:vertical;min-height:82px;line-height:1.6}.field input::placeholder,.field textarea::placeholder{color:var(--color-muted);opacity:.8}.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--color-accent)}.field-help{font-size:10px;color:var(--color-muted);line-height:1.6;margin-top:6px}.field-head,.field>.field-head{display:flex;justify-content:space-between;align-items:baseline}.counter{font-size:10px;color:var(--color-muted)}.section-rule{border:0;border-top:1px solid var(--color-line);margin:24px 0}.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:13px;gap:12px}.section-head h3{font-size:12px;font-weight:600}.section-head small{font-size:10px;color:var(--color-muted)}.preset-row{display:flex;gap:6px;flex-wrap:wrap;margin:-3px 0 21px}.preset{padding:7px 10px;background:var(--color-paper);border:1px solid var(--color-line);border-radius:5px;font-size:10px;min-height:32px}.preset:hover{border-color:var(--color-accent)}.days{display:flex;flex-direction:column;gap:10px}.day-row{display:grid;grid-template-columns:132px minmax(0,1fr) 30px;gap:8px;align-items:start;padding:12px 10px;background:var(--color-paper);border-radius:var(--radius-sm)}.day-row label{min-width:0}.day-row label>span{font-size:9px;font-weight:500;color:var(--color-muted);margin-bottom:5px}.day-row input{min-width:0;width:100%;padding:8px;font-size:11px;min-height:37px;background:var(--color-surface)}.day-row .icon-button{margin-top:19px;width:28px;min-height:36px;padding:4px}.day-row .weekday{font-size:9px;color:var(--color-muted);margin-top:4px;padding-left:2px}.add-day{width:100%;margin-top:12px;border-style:dashed;background:transparent;font-weight:500;min-height:40px}.checkbox-line{display:flex;gap:9px;align-items:center;font-size:11px;margin-bottom:13px;cursor:pointer}.checkbox-line input{accent-color:var(--color-accent);width:15px;height:15px;margin:0}.checkbox-line span{margin:0!important;font-weight:400!important}.empty{font-size:12px;color:var(--color-muted);padding:18px;text-align:center;border:1px dashed var(--color-line);border-radius:6px}.editor-footer{padding:14px 26px;border-top:1px solid var(--color-line);display:flex;align-items:center;justify-content:space-between}.editor-footer small{font-size:10px;color:var(--color-muted)}
+.preview-pane{background:var(--color-stage);min-width:0;position:relative}.preview-top{padding:21px 25px;display:flex;align-items:center;justify-content:space-between;gap:12px}.preview-label{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:600}.live-dot{width:5px;height:5px;background:var(--color-success);border-radius:50%}.format-select{width:auto;font-size:10px;min-height:33px;padding:6px 26px 6px 10px;background:var(--color-paper)}.preview-body{padding:5px 30px 25px;display:flex;align-items:center;flex-direction:column}.canvas-wrap{width:min(100%,330px);position:relative;box-shadow:0 12px 38px var(--color-shadow);background:var(--color-paper)}#story{display:block;width:100%;height:auto}.preview-meta{display:flex;gap:9px;align-items:center;justify-content:center;margin-top:19px;color:var(--color-muted);font-size:10px;letter-spacing:.25px}.preview-meta span+span:before{content:'·';margin-right:9px}.preview-hint{display:flex;align-items:center;gap:7px;color:var(--color-muted);font-size:10px;margin-top:12px}.preview-hint svg{width:13px;height:13px}.preview-download{width:min(100%,330px);margin-top:20px;min-height:45px}.warning{max-width:370px;margin-top:14px;padding:10px 13px;border:1px solid var(--color-error);border-radius:6px;color:var(--color-error);font-size:11px;background:var(--color-paper)}.mobile-preview{display:none}.preview-sticky{position:sticky;top:0}
+.templates{margin-top:29px}.templates-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.templates-heading h2{font-family:var(--font-display);font-size:23px;letter-spacing:-.5px}.templates-heading p{font-size:11px;color:var(--color-muted);margin-top:4px}.templates-heading>span{font-size:10px;color:var(--color-muted)}.template-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}.template-button{border:1px solid var(--color-line);border-radius:8px;padding:10px;background:var(--color-surface);text-align:left;min-width:0;position:relative}.template-image{height:134px;background:var(--color-paper);display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:4px;padding:9px}.template-image canvas{height:100%;width:auto;box-shadow:0 2px 7px var(--color-shadow)}.template-name{display:block;font-size:11px;margin-top:10px;overflow:hidden;text-overflow:ellipsis}.template-description{display:block;font-size:9px;color:var(--color-muted);margin-top:3px;overflow:hidden;text-overflow:ellipsis}.template-button[aria-pressed=true]{border-color:var(--color-accent);box-shadow:0 0 0 1px var(--color-accent)}.template-check{position:absolute;right:15px;top:14px;background:var(--color-accent);color:var(--color-surface);width:19px;height:19px;border-radius:50%;font-size:11px;text-align:center;line-height:19px;display:none}.template-button[aria-pressed=true] .template-check{display:block}
+.palette-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:24px}.palette-button{position:relative;border:1px solid var(--color-line);background:var(--color-surface);padding:12px;border-radius:7px;text-align:left;font-size:10px}.palette-button[aria-pressed=true]{border-color:var(--color-accent);box-shadow:0 0 0 1px var(--color-accent)}.swatches{display:flex;margin-bottom:9px;gap:4px}.swatch{width:22px;height:22px;border-radius:50%;border:1px solid var(--color-line)}.palette-button[aria-pressed=true]:after{content:'✓';position:absolute;right:10px;bottom:10px;color:var(--color-accent)}.background-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:22px}.background-button{border:1px solid var(--color-line);border-radius:6px;background:var(--color-paper);font-size:10px;padding:10px 5px;min-height:44px}.background-button[aria-pressed=true]{border-color:var(--color-accent);color:var(--color-accent);background:var(--color-soft);font-weight:600}.font-options{display:grid;gap:8px}.font-button{display:flex;align-items:center;gap:15px;border:1px solid var(--color-line);border-radius:6px;background:var(--color-surface);padding:11px 14px;text-align:left}.font-button[aria-pressed=true]{border-color:var(--color-accent);background:var(--color-paper)}.font-sample{font-family:var(--font-display);font-size:29px;line-height:1.1}.font-info{font-size:11px}.font-info small{display:block;font-family:var(--font-body);color:var(--color-muted);font-size:9px;margin-top:3px}.brand-helper{background:var(--color-paper);border-left:2px solid var(--color-accent);padding:15px;font-size:11px;color:var(--color-muted);line-height:1.8;margin:5px 0 25px}.footer{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:27px 0 12px;color:var(--color-muted);font-size:10px}.footer-wordmark{font-family:var(--font-display);font-size:17px;color:var(--color-ink)}.notice{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);z-index:20;display:flex;align-items:center;gap:14px;padding:12px 17px;background:var(--color-ink);color:var(--color-surface);border-radius:8px;box-shadow:0 4px 18px var(--color-shadow);max-width:calc(100% - 24px);font-size:12px}.notice p{min-width:0}.notice button{background:transparent;color:inherit;border:0;padding:7px;text-decoration:underline;min-height:36px}.notice .dismiss{text-decoration:none;font-size:19px}.tip{font-size:11px;line-height:1.8;color:var(--color-muted);margin-top:22px}.range-row{display:flex;align-items:center;gap:12px}.range-row input{padding:0;accent-color:var(--color-accent)}.range-row output{font-size:11px;min-width:36px}.no-script{margin:20px;padding:20px;color:var(--color-error);border:1px solid currentColor}
+@media(hover:hover){.button:not(.primary):hover,.icon-button:hover{background:var(--color-soft)}.button.primary:hover{opacity:.91}.template-button:hover,.palette-button:hover,.font-button:hover{border-color:var(--color-accent)}}
+@media(min-width:1450px){.workspace{grid-template-columns:470px minmax(0,1fr)}.canvas-wrap,.preview-download{width:355px}.preview-body{padding-top:10px}.panel{height:660px;max-height:660px}}
+@media(max-width:1050px){main{padding:28px 24px 20px}.header-inner{padding:16px 24px}.header-note{display:none}.workspace{grid-template-columns:390px minmax(0,1fr)}.editor-top,.panel{padding-left:20px;padding-right:20px}.preview-top{padding:21px 18px}.preview-body{padding-left:22px;padding-right:22px}.template-grid{gap:10px}.template-name{font-size:10px}.template-image{height:110px}.tabs{gap:24px}}
+@media(max-width:780px){.workspace{grid-template-columns:minmax(0,1fr)}.editor{border-right:0}.panel{height:auto;max-height:none;min-height:0;overflow-y:visible}.preview-pane{border-top:1px solid var(--color-line)}.preview-sticky{position:static}.preview-body{padding-bottom:30px}.preview-top{padding:20px 24px}.template-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.template-image{height:145px}.intro{align-items:flex-start;flex-direction:column;gap:14px}.local-status{padding:0}.mobile-preview{display:inline-flex;font-size:11px;text-decoration:none;gap:6px;align-items:center}.intro-bottom{display:flex;justify-content:space-between;width:100%;align-items:center}.footer{flex-wrap:wrap}.template-name{font-size:11px}.header-inner{min-height:76px}.brand-name{font-size:23px}.header-actions{gap:3px}.header-actions .button{padding:9px 12px}.save-label{display:none}.editor-top{padding:22px 24px 0}.panel{padding:23px 24px}.editor-footer{padding:12px 24px}.day-row{grid-template-columns:145px minmax(0,1fr) 30px}.preview-download{min-height:47px}}
+@media(max-width:440px){main{padding:25px 14px 12px}.header-inner{padding:14px 15px;gap:6px}.brand{gap:8px}.brand-mark{width:29px;height:35px}.brand-name{font-size:22px}.brand-caption{font-size:7px;letter-spacing:1.6px}.header-actions .button{padding:9px 10px;font-size:10px;gap:5px}.header-actions .button svg{width:15px;height:15px}.header-actions #saveDraft{width:37px;padding:8px}.intro p{font-size:12px;max-width:300px}.editor-top{padding:20px 17px 0}.panel{padding:21px 17px}.editor-footer{padding:12px 17px}.tabs{gap:0;justify-content:space-between}.tab{font-size:10px;gap:5px}.tab svg{width:13px;height:13px}.editor-title>span{display:none}.day-row{grid-template-columns:119px minmax(0,1fr) 24px;gap:6px;padding:10px 7px}.day-row input{font-size:10px;padding:7px 5px}.day-row .icon-button{width:24px}.template-grid{gap:9px}.template-image{height:116px;padding:7px}.template-button{padding:7px}.template-name{font-size:9px}.template-description{font-size:8px}.template-check{top:10px;right:10px;width:16px;height:16px;line-height:16px;font-size:9px}.templates-heading h2{font-size:22px}.templates-heading>span{display:none}.template-name{margin-top:8px}.preview-body{padding:0 23px 25px}.preview-top{padding:19px 18px}.background-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.footer{font-size:9px}.local-status{font-size:10px}.font-button{gap:12px}.font-info{font-size:10px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}button:active:not(:disabled){transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#editor">Μετάβαση στον επεξεργαστή</a>
+<svg class="sr-only" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v4h16v-4"/></symbol>
+<symbol id="i-save" viewBox="0 0 24 24"><path d="M5 3h12l4 4v14H3V3h2Zm2 0v6h10V3M7 21v-8h10v8"/></symbol>
+<symbol id="i-text" viewBox="0 0 24 24"><path d="M4 5h16M12 5v15M8 20h8M4 5v3m16-3v3"/></symbol>
+<symbol id="i-style" viewBox="0 0 24 24"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z"/></symbol>
+<symbol id="i-brand" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7"/></symbol>
+<symbol id="i-reset" viewBox="0 0 24 24"><path d="M3 10a9 9 0 1 1 1 8M3 4v6h6"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></symbol>
+<symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+</defs></svg>
+<header class="header"><div class="header-inner">
+<div class="brand"><svg class="brand-mark" viewBox="0 0 40 48" aria-hidden="true"><path d="M20 44V24C4 24 6 7 12 3c9 3 12 12 8 21Zm0-1V27c15-1 19-14 13-20-10 2-15 11-13 20ZM20 35C5 36 2 28 3 22c10-2 16 5 17 13Z"/></svg><div><div class="brand-name">Dafni nails </div><div class="brand-caption">BEAUTY STORY MAKER</div></div></div>
+<div class="header-note">Μικρές ιστορίες. Όμορφες συνδέσεις.</div>
+<div class="header-actions"><button id="saveDraft" class="button quiet" title="Αποθήκευση προσχεδίου" aria-label="Αποθήκευση προσχεδίου"><svg aria-hidden="true"><use href="#i-save"/></svg><span class="save-label">Αποθήκευση</span></button><button class="button primary" data-export><svg aria-hidden="true"><use href="#i-download"/></svg><span>Λήψη PNG</span></button></div>
+</div></header>
+<noscript><p class="no-script">Για να δημιουργήσεις και να κατεβάσεις το story σου, ενεργοποίησε τη JavaScript στον browser σου.</p></noscript>
+<main>
+<section class="intro"><div><h1>Το επόμενο story σου, όμορφα.</h1><p>Λίγα λόγια, η δική σου αισθητική — έτοιμο να το μοιραστείς.</p></div><div class="intro-bottom"><div class="local-status" role="status"><span class="status-dot" aria-hidden="true"></span><span id="saveStatus">Το προσχέδιο αποθηκεύεται αυτόματα</span></div><a class="mobile-preview" href="#preview"><svg aria-hidden="true"><use href="#i-eye"/></svg>Προεπισκόπηση</a></div></section>
+<div class="workspace">
+<section class="editor" id="editor" aria-label="Επεξεργασία story">
+<div class="editor-top"><div class="editor-title"><h2>Δώσε το δικό σου ύφος</h2><span>YOUR LITTLE STUDIO</span></div>
+<div class="tabs" role="tablist" aria-label="Ρυθμίσεις story"><button class="tab" id="tab-content" role="tab" aria-selected="true" aria-controls="panel-content" data-tab="content"><svg aria-hidden="true"><use href="#i-text"/></svg>Περιεχόμενο</button><button class="tab" id="tab-style" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-style" data-tab="style"><svg aria-hidden="true"><use href="#i-style"/></svg>Αισθητική</button><button class="tab" id="tab-brand" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-brand" data-tab="brand"><svg aria-hidden="true"><use href="#i-brand"/></svg>Το brand σου</button></div></div>
+<div id="panel-content" class="panel" role="tabpanel" aria-labelledby="tab-content">
+<label class="field"><span>Τι θέλεις να μοιραστείς;</span><select id="type" data-field="type"><option value="availability">Διαθέσιμα ραντεβού</option><option value="announcement">Ανακοίνωση / ενημέρωση</option><option value="reminder">Υπενθύμιση κράτησης</option><option value="custom">Το δικό σου μήνυμα</option></select></label>
+<div class="field-head"><span class="field-label">Μια έτοιμη αφετηρία</span><span class="counter">Εφαρμογή κειμένου</span></div><div class="preset-row"><button class="preset" data-preset="availability">Διαθεσιμότητα</button><button class="preset" data-preset="announcement">Μικρό διάλειμμα</button><button class="preset" data-preset="reminder">Κλείσε έγκαιρα</button></div>
+<label class="field"><span class="field-head"><span>Τίτλος</span><span class="counter" id="titleCount">0 / 90</span></span><input id="title" data-field="title" maxlength="90" placeholder="Διαθέσιμα ραντεβού"></label>
+<label class="field"><span>Υπότιτλος <small class="optional">Προαιρετικό</small></span><input id="subtitle" data-field="subtitle" maxlength="100" placeholder="Λίγος χρόνος, μόνο για εσένα"></label>
+<label class="field"><span>Το μήνυμά σου <small class="optional">Έως 600 χαρακτήρες</small></span><textarea id="message" data-field="message" maxlength="600" rows="3" placeholder="Γράψε μια μικρή ενημέρωση για τις πελάτισσές σου…"></textarea></label>
+<hr class="section-rule"><div class="section-head"><h3>Ημέρες & ώρες</h3><small id="dayCount">3 ημέρες</small></div>
+<label class="checkbox-line"><input id="showSchedule" type="checkbox" data-field="showSchedule"><span>Εμφάνιση διαθεσιμότητας στο story</span></label>
+<div id="scheduleControls"><div class="days" id="days"></div><button class="button add-day" id="addDay"><svg aria-hidden="true"><use href="#i-plus"/></svg>Προσθήκη ημερομηνίας</button><p class="field-help">Πρόσθεσε ώρες ή διαστήματα, π.χ. 10:00, 14:30 ή 17:00–20:00.</p></div>
+<hr class="section-rule"><label class="field"><span>Πρόσκληση για κράτηση</span><input id="cta" data-field="cta" maxlength="100" placeholder="Στείλε μου DM για το ραντεβού σου"></label><label class="field"><span>Μικρή σημείωση <small class="optional">Προαιρετικό</small></span><input id="note" data-field="note" maxlength="120" placeholder="Οι θέσεις είναι περιορισμένες"></label>
+</div>
+<div id="panel-style" class="panel" role="tabpanel" aria-labelledby="tab-style" hidden>
+<div class="section-head"><h3>Η παλέτα σου</h3><small id="paletteName">Soft Blush</small></div><div class="palette-grid" id="palettes" role="group" aria-label="Χρωματική παλέτα"></div>
+<div class="section-head"><h3>Φόντο & λεπτομέρειες</h3></div><div class="background-grid" id="backgrounds" role="group" aria-label="Στυλ φόντου"></div>
+<div class="section-head"><h3>Τυπογραφία</h3></div><div class="font-options" id="fonts" role="group" aria-label="Συνδυασμός γραμματοσειρών"></div>
+<hr class="section-rule"><label class="field" for="textScale"><span>Μέγεθος κειμένου</span><span class="range-row"><input id="textScale" data-field="textScale" type="range" min="85" max="120" step="5"><output id="scaleValue" for="textScale">100%</output></span></label><p class="field-help">Το layout προσαρμόζεται αυτόματα ώστε να χωρά όλο το περιεχόμενο.</p>
+<p class="tip">Τα templates αλλάζουν τη σύνθεση. Η παλέτα, τα κείμενα και το brand σου παραμένουν δικά σου.</p>
+</div>
+<div id="panel-brand" class="panel" role="tabpanel" aria-labelledby="tab-brand" hidden>
+<div class="brand-helper">Πρόσθεσε τον τρόπο επικοινωνίας σου για να ξέρουν πού θα σε βρουν.</div>
+<label class="field"><span>Instagram handle <small class="optional">Προαιρετικό</small></span><input id="handle" data-field="handle" maxlength="60" placeholder="@dafniss_nails" autocapitalize="none" spellcheck="false"></label>
+<label class="field"><span>Τηλέφωνο / επικοινωνία <small class="optional">Προαιρετικό</small></span><input id="contact" data-field="contact" maxlength="70" placeholder="π.χ. 69Χ ΧΧΧ ΧΧΧΧ"></label>
+<p class="tip">Τα στοιχεία παραμένουν σε αυτόν τον browser. Δεν ανεβαίνουν σε server και δεν απαιτείται λογαριασμός.</p>
+</div>
+<div class="editor-footer"><small>Φτιαγμένο για το δικό σου beauty brand.</small><button class="button quiet small" id="reset"><svg aria-hidden="true"><use href="#i-reset"/></svg>Επαναφορά</button></div>
+</section>
+<section id="preview" class="preview-pane" aria-label="Ζωντανή προεπισκόπηση"><div class="preview-sticky">
+<div class="preview-top"><div class="preview-label"><span class="live-dot" aria-hidden="true"></span>Live preview</div><label><span class="sr-only">Διαστάσεις εικόνας</span><select id="format" class="format-select" data-field="format"><option value="story">Instagram Story · 9:16</option><option value="portrait">Instagram Post · 4:5</option><option value="square">Square Post · 1:1</option></select></label></div>
+<div class="preview-body"><div class="canvas-wrap"><canvas id="story" width="1080" height="1920" role="img" aria-label="Προεπισκόπηση story" aria-describedby="storyDescription">Η προεπισκόπηση χρειάζεται browser που υποστηρίζει Canvas.</canvas></div><p id="storyDescription" class="sr-only"></p><div class="preview-meta"><span id="dimensions">1080 × 1920 px</span><span id="currentTemplate">Soft Beauty</span><span>PNG</span></div><p class="preview-hint"><svg aria-hidden="true"><use href="#i-style"/></svg>Το δικό σου σχέδιο, χωρίς υδατογράφημα.</p><p class="warning" id="layoutWarning" role="status" hidden></p><button class="button primary preview-download" data-export><svg aria-hidden="true"><use href="#i-download"/></svg><span>Λήψη του story σου</span></button></div>
+</div></section>
+</div>
+<section class="templates" aria-labelledby="templatesTitle"><div class="templates-heading"><div><h2 id="templatesTitle">Μια άλλη διάθεση;</h2><p>Διάλεξε μια σύνθεση. Κάν’ τη δική σου.</p></div><span>6 προσεγμένα templates</span></div><div class="template-grid" id="templates" role="group" aria-label="Πρότυπα σχεδίασης"></div></section>
+<footer class="footer"><span class="footer-wordmark">Made with a little petal.</span><span><svg aria-hidden="true" style="width:11px;height:11px;vertical-align:-2px;margin-right:5px"><use href="#i-lock"/></svg>Μόνο στον browser σου. Χωρίς εγγραφή.</span></footer>
+</main>
+<div class="notice" id="notice" hidden><p id="noticeText" role="status"></p><button id="undo" hidden>Αναίρεση</button><button class="dismiss" id="dismissNotice" aria-label="Κλείσιμο ειδοποίησης">×</button></div>
+<script>
+'use strict';
+/* State, render and export share one canvas renderer. No network requests or dependencies. */
+const $ = (selector, root=document) => root.querySelector(selector);
+const $$ = (selector, root=document) => [...root.querySelectorAll(selector)];
+const STORAGE_KEY = 'petal-studio-draft-v1';
+const MAX_DAYS = 12;
+const PALETTES = [
+ {id:'blush',name:'Soft Blush',bg:'#f2e4df',card:'#faf4ed',ink:'#543a3b',accent:'#916263',line:'#d5b8ad',wash:'#dfc0b5'},
+ {id:'nude',name:'Nude Elegance',bg:'#e9ded2',card:'#f7f1e8',ink:'#4e4238',accent:'#836b54',line:'#c9b7a3',wash:'#d2baa6'},
+ {id:'rose',name:'Rose Gold',bg:'#e9d1c7',card:'#faf0e7',ink:'#59382e',accent:'#986247',line:'#cda088',wash:'#d8ae99'},
+ {id:'ivory',name:'Clean Ivory',bg:'#f1eee5',card:'#faf8f1',ink:'#46463b',accent:'#777253',line:'#d0cbb7',wash:'#dfdccf'},
+ {id:'mauve',name:'Mauve Minimal',bg:'#e7dfe8',card:'#f6f0f5',ink:'#514052',accent:'#826180',line:'#c8b5c9',wash:'#cab7d0'},
+ {id:'sage',name:'Sage Beauty',bg:'#dfe5da',card:'#f3f3e9',ink:'#3d4b3c',accent:'#657d59',line:'#b8c5ae',wash:'#bfcdb6'},
+ {id:'peach',name:'Peach Cream',bg:'#f4dfcc',card:'#fff3e6',ink:'#634638',accent:'#a06b4f',line:'#dcbaa0',wash:'#e5bda3'},
+ {id:'black',name:'Black & Beige',bg:'#272622',card:'#34312b',ink:'#f4e9d7',accent:'#d5b991',line:'#746550',wash:'#4b4033'}
+];
+const TEMPLATES = [
+ {id:'minimal',name:'Minimal Elegant',description:'Απλότητα που ξεχωρίζει',palette:'ivory'},
+ {id:'schedule',name:'Availability',description:'Χώρος για κάθε ραντεβού',palette:'nude'},
+ {id:'soft',name:'Soft Beauty',description:'Απαλό & ανεπιτήδευτο',palette:'blush'},
+ {id:'editorial',name:'Luxury Editorial',description:'Η κομψότητα του λιτού',palette:'black'},
+ {id:'friendly',name:'Client Note',description:'Μια προσωπική πινελιά',palette:'sage'},
+ {id:'blank',name:'Blank Canvas',description:'Το μήνυμα στο επίκεντρο',palette:'mauve'}
+];
+const BACKGROUNDS = [{id:'solid',name:'Μονόχρωμο'},{id:'gradient',name:'Απαλό gradient'},{id:'abstract',name:'Οργανικά σχήματα'},{id:'marble',name:'Marble texture'},{id:'sparkles',name:'Διακριτική λάμψη'}];
+const FONTS = [
+ {id:'elegant',name:'Elegant Serif',description:'Georgia + Arial · διαχρονικό',display:'Georgia, "Times New Roman", serif',body:'Arial, sans-serif'},
+ {id:'soft',name:'Soft & Personal',description:'Palatino + Trebuchet · ζεστό',display:'"Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif',body:'"Trebuchet MS", Arial, sans-serif'},
+ {id:'editorial',name:'Luxury Editorial',description:'Didot + Arial · εκλεπτυσμένο',display:'Didot, "Bodoni MT", "Times New Roman", serif',body:'Arial, sans-serif'}
+];
+const FORMATS = {story:{width:1080,height:1920},portrait:{width:1080,height:1350},square:{width:1080,height:1080}};
+const PRESETS = {
+ availability:{title:'Λίγος χρόνος,\nμόνο για εσένα.',subtitle:'ΔΙΑΘΕΣΙΜΑ ΡΑΝΤΕΒΟΥ',message:'Μια μικρή παύση για περιποίηση.\nΔιάλεξε τη στιγμή που σου ταιριάζει.',cta:'Στείλε μου DM για το ραντεβού σου',note:'Ανυπομονώ να σε δω!',showSchedule:true},
+ announcement:{title:'Ένα μικρό\nδιάλειμμα.',subtitle:'ΜΙΑ ΜΙΚΡΗ ΕΝΗΜΕΡΩΣΗ',message:'Θα δέχομαι ραντεβού μέχρι …\n\nΓια να οργανώσουμε έγκαιρα την περιποίησή σου, στείλε μου ένα μήνυμα με την ημέρα που σε εξυπηρετεί.',cta:'Στείλε μου DM για περισσότερα',note:'Σε ευχαριστώ για την κατανόηση.',showSchedule:false},
+ reminder:{title:'Κράτησε τη\nστιγμή σου.',subtitle:'ΛΙΓΟΣ ΧΡΟΝΟΣ ΓΙΑ ΕΣΕΝΑ',message:'Λόγω αυξημένης ζήτησης, οι διαθέσιμες θέσεις γεμίζουν γρήγορα.\n\nΚλείσε έγκαιρα το ραντεβού σου για να βρεις την ημέρα και την ώρα που σου ταιριάζει.',cta:'Κλείσε το επόμενο ραντεβού σου με DM',note:'Η περιποίησή σου αξίζει τον χρόνο της.',showSchedule:false}
+};
+function dateString(date){return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;}
+function offsetDate(days){const d=new Date();d.setDate(d.getDate()+days);return dateString(d);}
+function defaults(){return {version:1,type:'availability',...PRESETS.availability,title:'Λίγος χρόνος, μόνο για εσένα.',handle:'dafniss_nails',contact:'',palette:'blush',background:'abstract',font:'elegant',template:'soft',format:'story',textScale:100,days:[{date:offsetDate(1),times:'10:00, 12:30, 17:00'},{date:offsetDate(3),times:'11:00, 16:00'},{date:offsetDate(5),times:'10:30, 13:00, 18:00'}]};}
+const LIMITS={title:90,subtitle:100,message:600,cta:100,note:120,handle:60,contact:70};
+function validDate(value){if(typeof value!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(value))return false;const d=new Date(value+'T12:00:00');return !isNaN(d)&&dateString(d)===value;}
+// Validate persisted values, so a stale or malformed draft never breaks the app.
+function sanitize(raw){
+ if(!raw||typeof raw!=='object'||raw.version!==1)throw new Error('Invalid draft');
+ const value=defaults();
+ for(const [key,max] of Object.entries(LIMITS))if(typeof raw[key]==='string')value[key]=raw[key].slice(0,max);
+ for(const [key,choices] of Object.entries({type:['availability','announcement','reminder','custom'],palette:PALETTES.map(p=>p.id),background:BACKGROUNDS.map(b=>b.id),font:FONTS.map(f=>f.id),template:TEMPLATES.map(t=>t.id),format:Object.keys(FORMATS)}))if(choices.includes(raw[key]))value[key]=raw[key];
+ if(value.handle==='@your.beauty.studio')value.handle='dafniss_nails';
+ if(typeof raw.showSchedule==='boolean')value.showSchedule=raw.showSchedule;
+ if(Number.isFinite(raw.textScale))value.textScale=Math.max(85,Math.min(120,Math.round(raw.textScale/5)*5));
+ if(Array.isArray(raw.days))value.days=raw.days.slice(0,MAX_DAYS).filter(d=>d&&typeof d==='object').map(d=>({date:validDate(d.date)?d.date:'',times:typeof d.times==='string'?d.times.slice(0,100):''}));
+ return value;
+}
+let state=defaults(), storageAvailable=true, saveTimer, frame, undoAction=null, lastRender={minSize:40}, isExporting=false;
+try{const draft=localStorage.getItem(STORAGE_KEY);if(draft){state=sanitize(JSON.parse(draft));$('#saveStatus').textContent='Το τελευταίο προσχέδιο επανήλθε';}}
+catch(error){storageAvailable=false;$('#saveStatus').textContent='Δεν ήταν δυνατή η φόρτωση προσχεδίου';}
+function notify(message,undo=null){$('#noticeText').textContent=message;$('#notice').hidden=false;$('#undo').hidden=!undo;undoAction=undo;}
+$('#dismissNotice').addEventListener('click',()=>{$('#notice').hidden=true;undoAction=null;});
+$('#undo').addEventListener('click',()=>{const action=undoAction;$('#notice').hidden=true;undoAction=null;if(action)action();});
+function saveDraft(manual=false){clearTimeout(saveTimer);try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));storageAvailable=true;$('#saveStatus').textContent=`Αποθηκεύτηκε ${new Intl.DateTimeFormat('el-GR',{hour:'2-digit',minute:'2-digit'}).format(new Date())}`;if(manual)notify('Το προσχέδιο αποθηκεύτηκε σε αυτόν τον browser.');}catch(error){storageAvailable=false;$('#saveStatus').textContent='Η τοπική αποθήκευση δεν είναι διαθέσιμη';if(manual)notify('Ο browser δεν επιτρέπει αποθήκευση. Μπορείς να κατεβάσεις κανονικά το PNG.');}}
+function changed(){updateSelections();cancelAnimationFrame(frame);frame=requestAnimationFrame(render);$('#saveStatus').textContent=storageAvailable?'Μη αποθηκευμένες αλλαγές…':'Η τοπική αποθήκευση δεν είναι διαθέσιμη';clearTimeout(saveTimer);saveTimer=setTimeout(()=>saveDraft(),600);}
+function fillFields(){$$('[data-field]').forEach(el=>{const value=state[el.dataset.field];if(el.type==='checkbox')el.checked=value;else el.value=value;});renderDays();updateSelections();render();}
+function updateSelections(){
+ for(const key of ['palette','background','font','template'])$$(`[data-${key}]`).forEach(button=>button.setAttribute('aria-pressed',String(button.dataset[key]===state[key])));
+ $('#titleCount').textContent=`${state.title.length} / 90`;$('#scaleValue').textContent=state.textScale+'%';$('#paletteName').textContent=PALETTES.find(p=>p.id===state.palette).name;
+ $('#scheduleControls').hidden=!state.showSchedule;$('#dayCount').textContent=state.days.length===1?'1 ημέρα':`${state.days.length} ημέρες`;$('#addDay').disabled=state.days.length>=MAX_DAYS;
+ $('#addDay').title=state.days.length>=MAX_DAYS?'Έως 12 ημέρες ανά story':'';
+ $('#currentTemplate').textContent=TEMPLATES.find(t=>t.id===state.template).name;
+ const size=FORMATS[state.format];$('#dimensions').textContent=`${size.width} × ${size.height} px`;
+}
+function weekday(date){return validDate(date)?new Intl.DateTimeFormat('el-GR',{weekday:'long'}).format(new Date(date+'T12:00:00')):'Επίλεξε ημερομηνία';}
+function renderDays(){
+ const root=$('#days');root.replaceChildren();
+ if(!state.days.length){const empty=document.createElement('p');empty.className='empty';empty.textContent='Η πρώτη σου διαθέσιμη μέρα ξεκινά εδώ.';root.append(empty);}
+ state.days.forEach((day,index)=>{
+  const row=document.createElement('div');row.className='day-row';
+  row.innerHTML=`<label><span>Ημερομηνία</span><input type="date" aria-label="Ημερομηνία ${index+1}" min="1900-01-01" max="9999-12-31"><div class="weekday"></div></label><label><span>Διαθέσιμες ώρες</span><input type="text" maxlength="100" placeholder="10:00, 14:30" aria-label="Ώρες ημέρας ${index+1}"></label><button class="icon-button" aria-label="Αφαίρεση ημέρας ${index+1}" title="Αφαίρεση ημέρας"><svg aria-hidden="true"><use href="#i-trash"/></svg></button>`;
+  const [date,times]=$$('input',row);date.value=day.date;times.value=day.times;$('.weekday',row).textContent=weekday(day.date);
+  date.addEventListener('input',()=>{day.date=date.value;$('.weekday',row).textContent=weekday(day.date);changed();});
+  times.addEventListener('input',()=>{day.times=times.value;changed();});
+  $('button',row).addEventListener('click',()=>{const removed=state.days.splice(index,1)[0];renderDays();changed();const next=$$('.day-row button')[Math.min(index,state.days.length-1)]||$('#addDay');next.focus({preventScroll:true});notify('Η ημέρα αφαιρέθηκε.',()=>{state.days.splice(Math.min(index,state.days.length),0,removed);state.days=state.days.slice(0,MAX_DAYS);renderDays();changed();});});
+  root.append(row);
+ });
+}
+$('#addDay').addEventListener('click',()=>{if(state.days.length>=MAX_DAYS)return;const last=state.days.at(-1);let next=offsetDate(1);if(last&&validDate(last.date)){const d=new Date(last.date+'T12:00:00');d.setDate(d.getDate()+1);const candidate=dateString(d);if(validDate(candidate))next=candidate;}state.days.push({date:next,times:''});renderDays();changed();$$('.day-row input[type=text]').at(-1).focus({preventScroll:true});});
+$$('[data-field]').forEach(el=>el.addEventListener('input',()=>{const key=el.dataset.field;if(key==='type'){applyPreset(el.value);return;}state[key]=el.type==='checkbox'?el.checked:el.type==='range'?Number(el.value):el.value;changed();}));
+function selectTab(name,focus=false){$$('[data-tab]').forEach(tab=>{const active=tab.dataset.tab===name;tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;$('#panel-'+tab.dataset.tab).hidden=!active;if(active&&focus)tab.focus({preventScroll:true});});}
+$$('[data-tab]').forEach((tab,index)=>{tab.addEventListener('click',()=>selectTab(tab.dataset.tab));tab.addEventListener('keydown',event=>{let next;if(event.key==='ArrowRight')next=(index+1)%3;if(event.key==='ArrowLeft')next=(index+2)%3;if(event.key==='Home')next=0;if(event.key==='End')next=2;if(next!==undefined){event.preventDefault();selectTab($$('[data-tab]')[next].dataset.tab,true);}});});
+function applyPreset(key){
+ const before=structuredClone(state);
+ const preset=PRESETS[key]||{title:'Το δικό σου μήνυμα.',subtitle:'',message:'',cta:'Στείλε μου ένα μήνυμα',note:'',showSchedule:false};
+ Object.assign(state,preset,{type:key,title:preset.title.replace(/\n/g,' ')});fillFields();changed();
+ notify('Το έτοιμο κείμενο εφαρμόστηκε.',()=>{state=before;fillFields();changed();});
+}
+$$('[data-preset]').forEach(button=>button.addEventListener('click',()=>applyPreset(button.dataset.preset)));
+$('#saveDraft').addEventListener('click',()=>saveDraft(true));
+$('#reset').addEventListener('click',()=>{const before=structuredClone(state);state=defaults();fillFields();changed();notify('Επιστροφή στο αρχικό σχέδιο.',()=>{state=before;fillFields();changed();});});
+window.addEventListener('pagehide',()=>{clearTimeout(saveTimer);try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));}catch(error){/* Storage is optional. */}});
+function makeOptions(){
+ PALETTES.forEach(p=>{const b=document.createElement('button');b.className='palette-button';b.dataset.palette=p.id;b.setAttribute('aria-label',p.name);const swatches=document.createElement('span');swatches.className='swatches';swatches.setAttribute('aria-hidden','true');[p.bg,p.card,p.accent,p.ink].forEach(color=>{const s=document.createElement('span');s.className='swatch';s.style.backgroundColor=color;swatches.append(s);});b.append(swatches,document.createTextNode(p.name));b.addEventListener('click',()=>{state.palette=p.id;changed();});$('#palettes').append(b);});
+ BACKGROUNDS.forEach(bg=>{const b=document.createElement('button');b.className='background-button';b.dataset.background=bg.id;b.textContent=bg.name;b.addEventListener('click',()=>{state.background=bg.id;changed();});$('#backgrounds').append(b);});
+ FONTS.forEach(font=>{const b=document.createElement('button');b.className='font-button';b.dataset.font=font.id;b.innerHTML=`<span class="font-sample" aria-hidden="true">Aa</span><span class="font-info">${font.name}<small>${font.description}</small></span>`;$('.font-sample',b).style.fontFamily=font.display;b.addEventListener('click',()=>{state.font=font.id;changed();});$('#fonts').append(b);});
+ TEMPLATES.forEach(template=>{const b=document.createElement('button');b.className='template-button';b.dataset.template=template.id;b.innerHTML=`<span class="template-image"><canvas width="216" height="384" aria-hidden="true"></canvas></span><span class="template-name">${template.name}</span><span class="template-description">${template.description}</span><span class="template-check" aria-hidden="true">✓</span>`;b.addEventListener('click',()=>{state.template=template.id;changed();});$('#templates').append(b);const sample={...defaults(),template:template.id,palette:template.palette};drawStory($('canvas',b),sample,true);});
+}
+/* Canvas helpers: use measured line wrapping, including long unbroken words and explicit newlines. */
+function rounded(ctx,x,y,w,h,r){const radius=Math.min(r,w/2,h/2);ctx.beginPath();ctx.moveTo(x+radius,y);ctx.arcTo(x+w,y,x+w,y+h,radius);ctx.arcTo(x+w,y+h,x,y+h,radius);ctx.arcTo(x,y+h,x,y,radius);ctx.arcTo(x,y,x+w,y,radius);ctx.closePath();}
+function line(ctx,x1,y1,x2,y2,color,width=1){ctx.beginPath();ctx.strokeStyle=color;ctx.lineWidth=width;ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();}
+function splitLines(ctx,text,maxWidth){
+ const lines=[];
+ for(const paragraph of String(text).split('\n')){
+  if(!paragraph.trim()){lines.push('');continue;}
+  let current='';
+  for(const word of paragraph.trim().split(/\s+/)){
+   if(ctx.measureText(word).width>maxWidth){if(current){lines.push(current);current='';}let chunk='';for(const char of [...word]){if(chunk&&ctx.measureText(chunk+char).width>maxWidth){lines.push(chunk);chunk='';}chunk+=char;}current=chunk;}
+   else if(current&&ctx.measureText(current+' '+word).width>maxWidth){lines.push(current);current=word;}
+   else current+=(current?' ':'')+word;
+  }
+  if(current)lines.push(current);
+ }
+ return lines;
+}
+function textBlock(ctx,text,x,y,width,size,font,color,align='center',lineHeight=1.35,weight='normal',draw=true){
+ if(!text.trim())return 0;ctx.font=`${weight} ${size}px ${font}`;const lines=splitLines(ctx,text,width);ctx.fillStyle=color;ctx.textAlign=align;ctx.textBaseline='top';
+ if(draw)lines.forEach((value,i)=>ctx.fillText(value,align==='center'?x+width/2:x,y+i*size*lineHeight));
+ return lines.length*size*lineHeight;
+}
+function flower(ctx,x,y,size,color){ctx.save();ctx.translate(x,y);ctx.strokeStyle=color;ctx.lineWidth=2.1;for(let i=0;i<5;i++){ctx.save();ctx.rotate(i*Math.PI*2/5);ctx.beginPath();ctx.ellipse(0,-size*.39,size*.22,size*.4,0,0,Math.PI*2);ctx.stroke();ctx.restore();}ctx.beginPath();ctx.arc(0,0,size*.12,0,Math.PI*2);ctx.stroke();ctx.restore();}
+function sprig(ctx,x,y,size,color){ctx.save();ctx.translate(x,y);ctx.scale(size/100,size/100);ctx.lineWidth=1.4;ctx.strokeStyle=color;ctx.beginPath();ctx.moveTo(0,75);ctx.bezierCurveTo(6,18,-5,-20,15,-65);ctx.stroke();for(let i=0;i<5;i++){const yy=45-i*23,dir=i%2?1:-1;ctx.beginPath();ctx.moveTo(3,yy);ctx.bezierCurveTo(dir*37,yy-4,dir*42,yy-31,dir*27,yy-35);ctx.bezierCurveTo(dir*3,yy-33,0,yy-10,3,yy);ctx.stroke();}ctx.restore();}
+function decoration(ctx,p,s,h){
+ ctx.fillStyle=p.bg;ctx.fillRect(0,0,1080,h);
+ if(s.background==='gradient'){const g=ctx.createLinearGradient(0,0,1080,h);g.addColorStop(0,p.card);g.addColorStop(.55,p.bg);g.addColorStop(1,p.wash);ctx.fillStyle=g;ctx.fillRect(0,0,1080,h);}
+ if(s.background==='abstract'){ctx.save();ctx.fillStyle=p.wash;ctx.globalAlpha=.56;ctx.beginPath();ctx.ellipse(100,90,410,360,-.65,0,Math.PI*2);ctx.fill();ctx.globalAlpha=.4;ctx.beginPath();ctx.ellipse(1050,h-150,360,450,.7,0,Math.PI*2);ctx.fill();ctx.strokeStyle=p.accent;ctx.globalAlpha=.20;ctx.lineWidth=2;for(let i=0;i<3;i++){ctx.beginPath();ctx.ellipse(940,h-130,295+i*20,400+i*20,.6,0,Math.PI*2);ctx.stroke();}ctx.restore();}
+ if(s.background==='marble'){ctx.save();ctx.strokeStyle=p.accent;for(let i=0;i<22;i++){ctx.globalAlpha=i%4===0?.12:.035;ctx.lineWidth=i%4===0?2:8;ctx.beginPath();ctx.moveTo(-80,i*140-220);ctx.bezierCurveTo(280,i*95+160,590,i*160-170,1170,i*120+170);ctx.stroke();}ctx.restore();}
+ if(s.background==='sparkles'){ctx.save();ctx.strokeStyle=p.accent;ctx.globalAlpha=.5;[[140,200,20],[910,310,15],[900,h-230,24],[140,h-330,13],[960,h*.52,10]].forEach(([x,y,r])=>{ctx.beginPath();ctx.moveTo(x,y-r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.quadraticCurveTo(x,y,x,y+r);ctx.quadraticCurveTo(x,y,x-r,y);ctx.quadraticCurveTo(x,y,x,y-r);ctx.stroke();});ctx.restore();}
+}
+function drawStory(canvas,s,thumbnail=false){
+ const {width,height:h}=FORMATS[s.format];if(!thumbnail&&(canvas.width!==width||canvas.height!==h)){canvas.width=width;canvas.height=h;}
+ const ctx=canvas.getContext('2d');ctx.save();ctx.scale(canvas.width/1080,canvas.height/h);
+ const p=PALETTES.find(p=>p.id===s.palette),f=FONTS.find(f=>f.id===s.font),kind=s.template;
+ decoration(ctx,p,s,h);
+ const compact=h<1500,left=kind==='editorial'||kind==='friendly'||kind==='blank',align=left?'left':'center';
+ let x=132,w=816,top=compact?105:260,bottom=h-(compact?90:210);
+ if(kind==='soft'){ctx.fillStyle=p.card;rounded(ctx,76,compact?57:132,928,h-(compact?114:264),compact?130:420);ctx.fill();top=compact?135:310;bottom=h-(compact?120:265);}
+ if(kind==='schedule'){x=110;w=860;top=compact?100:220;bottom=h-(compact?95:180);line(ctx,x,top-36,x+w,top-36,p.accent,2);}
+ if(kind==='minimal'){top=compact?130:340;bottom=h-(compact?110:275);ctx.strokeStyle=p.line;ctx.lineWidth=2;ctx.strokeRect(55,55,970,h-110);}
+ if(kind==='editorial'){x=112;w=856;top=compact?110:235;bottom=h-(compact?100:190);line(ctx,x,top-46,x+w,top-46,p.accent,3);ctx.save();ctx.fillStyle=p.accent;ctx.globalAlpha=.08;ctx.font=`${compact?280:500}px ${f.display}`;ctx.textAlign='right';ctx.fillText('Aa',1120,h*.72);ctx.restore();}
+ if(kind==='friendly'){x=145;w=790;ctx.save();ctx.fillStyle=p.card;rounded(ctx,70,compact?55:125,940,h-(compact?110:250),14);ctx.fill();ctx.restore();top=compact?140:280;bottom=h-(compact?110:245);sprig(ctx,870,compact?170:310,compact?45:65,p.accent);w=760;}
+ if(kind==='blank'){x=125;w=830;top=compact?125:300;bottom=h-(compact?100:240);line(ctx,x,top-40,x+100,top-40,p.accent,4);}
+ const entries=s.showSchedule?s.days:[];
+ const heightAvailable=bottom-top;
+ // Build the same measured composition repeatedly until it fits inside the export safe area.
+ function compose(scale,draw){
+  let y=0,minSize=Infinity;const gap=26*scale;const base=(s.textScale/100)*scale;
+  function text(value,size,font=f.body,color=p.ink,leading=1.4,weight='normal'){
+   if(!value.trim())return;const actual=size*base;minSize=Math.min(minSize,actual);y+=textBlock(ctx,value,x,top+y,w,actual,font,color,align,leading,weight,draw);y+=gap;
+  }
+  text(s.subtitle,25,f.body,p.accent,1.35,'500');
+  text(s.title,kind==='editorial'?100:kind==='blank'?84:88,f.display,p.ink,1.11);
+  if(s.title||s.subtitle)y+=12*scale;
+  text(s.message,36,f.body,p.ink,1.6);
+  if(entries.length){
+   y+=15*scale;
+   for(const day of entries){
+    const date=validDate(day.date)?new Date(day.date+'T12:00:00'):null;
+    const dayText=date?new Intl.DateTimeFormat('el-GR',{weekday:'long'}).format(date):'Ημερομηνία';
+    const dateText=date?new Intl.DateTimeFormat('el-GR',{day:'2-digit',month:'short'}).format(date):'—';
+    const times=day.times.trim()||'Στείλε μου για ώρες';
+    const rowSize=33*base,labelSize=28*base;minSize=Math.min(minSize,labelSize);
+    const rowPad=23*scale,dateWidth=176*scale,innerW=w-2*rowPad-dateWidth-24*scale;
+    ctx.font=`normal ${rowSize}px ${f.body}`;const timeLines=splitLines(ctx,times,innerW);
+    ctx.font=`normal ${labelSize}px ${f.body}`;const dateLines=splitLines(ctx,dateText,dateWidth),dayLines=splitLines(ctx,dayText,dateWidth);
+    const dateHeight=(dateLines.length+dayLines.length)*labelSize*1.35+6*scale;
+    const rh=Math.max(99*scale,dateHeight+rowPad*2,timeLines.length*rowSize*1.4+rowPad*2);
+    if(draw){
+     if(kind==='soft'||kind==='schedule'||kind==='friendly'){ctx.fillStyle=kind==='soft'||kind==='friendly'?p.bg:p.card;rounded(ctx,x,top+y,w,rh,kind==='soft'?14:5);ctx.fill();}
+     else line(ctx,x,top+y,x+w,top+y,p.line,1.4);
+     const dateY=top+y+(rh-dateHeight)/2;
+     textBlock(ctx,dayText,x+rowPad,dateY,dateWidth,labelSize,f.body,p.accent,'left',1.35);
+     textBlock(ctx,dateText,x+rowPad,dateY+dayLines.length*labelSize*1.35+6*scale,dateWidth,labelSize,f.body,p.ink,'left',1.35,'600');
+     line(ctx,x+rowPad+dateWidth+10*scale,top+y+22*scale,x+rowPad+dateWidth+10*scale,top+y+rh-22*scale,p.line,1);
+     textBlock(ctx,times,x+rowPad+dateWidth+24*scale,top+y+(rh-timeLines.length*rowSize*1.4)/2,innerW,rowSize,f.body,p.ink,'left',1.4);
+    }
+    y+=rh+13*scale;
+   }
+   y+=25*scale;
+  }
+  if(s.cta){
+   y+=12*scale;if(draw)line(ctx,left?x:x+w/2-45,top+y,left?x+90:x+w/2+45,top+y,p.accent,1.5);y+=30*scale;
+   text(s.cta,30,f.body,p.accent,1.4,'600');
+  }
+  text(s.note,26,f.body,p.accent,1.45);
+  if(s.handle||s.contact)y+=35*scale;
+  text(s.handle,25,f.body,p.accent,1.3);
+  text(s.contact,25,f.body,p.accent,1.3);
+  return {height:y-gap,minSize:Number.isFinite(minSize)?minSize:40};
+ }
+ let scale=1,result=compose(scale,false);
+ for(let i=0;i<14&&result.height>heightAvailable;i++){scale*=Math.min(.96,heightAvailable/result.height);result=compose(scale,false);}
+ const free=Math.max(0,heightAvailable-result.height);top+=free*(kind==='editorial'||kind==='blank'?.26:.4);
+ if(kind==='soft'){flower(ctx,540,compact?103:238,compact?22:35,p.accent);}
+ if(kind==='minimal'){flower(ctx,540,compact?88:228,compact?22:34,p.accent);}
+ result=compose(scale,true);ctx.restore();return result;
+}
+function render(){
+ lastRender=drawStory($('#story'),state);
+ const badDates=state.showSchedule&&state.days.some(d=>!validDate(d.date));
+ const dense=lastRender.minSize<22;
+ $('#layoutWarning').hidden=!badDates&&!dense;
+ $('#layoutWarning').textContent=badDates?'Κάποια ημέρα δεν έχει ημερομηνία. Συμπλήρωσέ τη πριν κατεβάσεις την εικόνα.':dense?'Το κείμενο είναι πολύ μικρό για άνετη ανάγνωση. Μείωσε το μήνυμα ή τις ημέρες, ή διάλεξε Story 9:16.':'';
+ $$('[data-export]').forEach(b=>b.disabled=badDates||isExporting);
+ const summary=[state.subtitle,state.title,state.message,...(state.showSchedule?state.days.map(d=>`${weekday(d.date)} ${d.date}: ${d.times||'Στείλε μου για ώρες'}`):[]),state.cta,state.note,state.handle,state.contact].filter(Boolean).join('. ');
+ $('#storyDescription').textContent=summary;
+}
+async function exportImage(){
+ if(isExporting)return;render();if(state.showSchedule&&state.days.some(d=>!validDate(d.date)))return;
+ isExporting=true;const buttons=$$('[data-export]');buttons.forEach(b=>{b.disabled=true;b.setAttribute('aria-busy','true');});
+ try{
+  const snapshot=structuredClone(state),canvas=document.createElement('canvas');drawStory(canvas,snapshot);
+  const blob=await new Promise((resolve,reject)=>canvas.toBlob(value=>value?resolve(value):reject(new Error('PNG export failed')),'image/png'));
+  const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=`petal-${snapshot.format}-${dateString(new Date())}.png`;document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);
+  notify(`Η εικόνα ${FORMATS[snapshot.format].width} × ${FORMATS[snapshot.format].height} είναι έτοιμη. Αν ανοίξει σε νέα καρτέλα, κράτησέ την πατημένη για αποθήκευση.`);
+ }catch(error){notify('Η εξαγωγή δεν ολοκληρώθηκε. Δοκίμασε ξανά ή άνοιξε τη σελίδα σε έναν σύγχρονο browser.');}
+ finally{isExporting=false;buttons.forEach(b=>b.removeAttribute('aria-busy'));render();}
+}
+$$('[data-export]').forEach(button=>button.addEventListener('click',exportImage));
+makeOptions();fillFields();
+</script>
+</body>
+</html>
