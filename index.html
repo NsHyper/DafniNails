@@ -63,16 +63,16 @@ main{max-width:1420px;margin:0 auto;padding:34px 40px 20px}.intro{display:flex;j
 <section class="editor" id="editor" aria-label="Επεξεργασία story">
 <div class="editor-top"><div class="editor-title"><h2>Δώσε το δικό σου ύφος</h2><span>YOUR LITTLE STUDIO</span></div>
 <div class="tabs" role="tablist" aria-label="Ρυθμίσεις story"><button class="tab" id="tab-content" role="tab" aria-selected="true" aria-controls="panel-content" data-tab="content"><svg aria-hidden="true"><use href="#i-text"/></svg>Περιεχόμενο</button><button class="tab" id="tab-style" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-style" data-tab="style"><svg aria-hidden="true"><use href="#i-style"/></svg>Αισθητική</button><button class="tab" id="tab-brand" role="tab" tabindex="-1" aria-selected="false" aria-controls="panel-brand" data-tab="brand"><svg aria-hidden="true"><use href="#i-brand"/></svg>Το brand σου</button></div></div>
-<div id="panel-content" class="panel" role="tabpanel" aria-labelledby="tab-content">
+<div id="panel-content" class="panel" role="tabpanel" aria-labelledby="tab-content"><p class="field-help" style="margin:0 0 18px">Επίλεξε μια λέξη ή φράση και πάτησε <b>B Bold</b> (ή Ctrl/⌘ + B). Το **κείμενο** εμφανίζεται έντονο στο story, χωρίς τα αστεράκια.</p>
 <label class="field"><span>Τι θέλεις να μοιραστείς;</span><select id="type" data-field="type"><option value="availability">Διαθέσιμα ραντεβού</option><option value="announcement">Ανακοίνωση / ενημέρωση</option><option value="reminder">Υπενθύμιση κράτησης</option><option value="custom">Το δικό σου μήνυμα</option></select></label>
 <div class="field-head"><span class="field-label">Μια έτοιμη αφετηρία</span><span class="counter">Εφαρμογή κειμένου</span></div><div class="preset-row"><button class="preset" data-preset="availability">Διαθεσιμότητα</button><button class="preset" data-preset="announcement">Μικρό διάλειμμα</button><button class="preset" data-preset="reminder">Κλείσε έγκαιρα</button></div>
-<div class="field"><div class="field-toolbar"><label for="title"><span class="field-head"><span>Τίτλος</span><span class="counter" id="titleCount">0 / 90</span></span></label><button type="button" class="bold-toggle" data-bold="title" aria-label="Έντονη γραφή: Τίτλος" aria-pressed="false" title="Έντονη γραφή σε όλο το πεδίο"><b aria-hidden="true">B</b><span>Bold</span></button></div><input id="title" data-field="title" maxlength="90" placeholder="Διαθέσιμα ραντεβού"></div>
-<div class="field"><div class="field-toolbar"><label for="subtitle"><span>Υπότιτλος <small class="optional">Προαιρετικό</small></span></label><button type="button" class="bold-toggle" data-bold="subtitle" aria-label="Έντονη γραφή: Υπότιτλος" aria-pressed="false" title="Έντονη γραφή σε όλο το πεδίο"><b aria-hidden="true">B</b><span>Bold</span></button></div><input id="subtitle" data-field="subtitle" maxlength="100" placeholder="Λίγος χρόνος, μόνο για εσένα"></div>
-<div class="field"><div class="field-toolbar"><label for="message"><span>Το μήνυμά σου <small class="optional">Έως 600 χαρακτήρες</small></span></label><button type="button" class="bold-toggle" data-bold="message" aria-label="Έντονη γραφή: Μήνυμα" aria-pressed="false" title="Έντονη γραφή σε όλο το πεδίο"><b aria-hidden="true">B</b><span>Bold</span></button></div><textarea id="message" data-field="message" maxlength="600" rows="3" placeholder="Γράψε μια μικρή ενημέρωση για τις πελάτισσές σου…"></textarea></div>
+<div class="field"><div class="field-toolbar"><label for="title"><span class="field-head"><span>Τίτλος</span><span class="counter" id="titleCount">0 / 90</span></span></label><button type="button" class="bold-toggle" data-bold="title" aria-label="Έντονη γραφή: Τίτλος" aria-pressed="false" title="Επίλεξε κείμενο και πάτησε Bold"><b aria-hidden="true">B</b><span>Bold</span></button></div><input id="title" data-field="title" maxlength="270" placeholder="Διαθέσιμα ραντεβού"></div>
+<div class="field"><div class="field-toolbar"><label for="subtitle"><span>Υπότιτλος <small class="optional">Προαιρετικό</small></span></label><button type="button" class="bold-toggle" data-bold="subtitle" aria-label="Έντονη γραφή: Υπότιτλος" aria-pressed="false" title="Επίλεξε κείμενο και πάτησε Bold"><b aria-hidden="true">B</b><span>Bold</span></button></div><input id="subtitle" data-field="subtitle" maxlength="300" placeholder="Λίγος χρόνος, μόνο για εσένα"></div>
+<div class="field"><div class="field-toolbar"><label for="message"><span>Το μήνυμά σου <small class="optional">Έως 600 χαρακτήρες</small></span></label><button type="button" class="bold-toggle" data-bold="message" aria-label="Έντονη γραφή: Μήνυμα" aria-pressed="false" title="Επίλεξε κείμενο και πάτησε Bold"><b aria-hidden="true">B</b><span>Bold</span></button></div><textarea id="message" data-field="message" maxlength="1800" rows="3" placeholder="Γράψε μια μικρή ενημέρωση για τις πελάτισσές σου…"></textarea></div>
 <hr class="section-rule"><div class="section-head"><h3>Ημέρες & ώρες</h3><small id="dayCount">3 ημέρες</small></div>
 <label class="checkbox-line"><input id="showSchedule" type="checkbox" data-field="showSchedule"><span>Εμφάνιση διαθεσιμότητας στο story</span></label>
-<div id="scheduleControls"><div class="schedule-format"><span>Έντονες ώρες σε όλες τις ημέρες</span><button type="button" class="bold-toggle" data-bold="times" aria-label="Έντονη γραφή: διαθέσιμες ώρες" aria-pressed="false"><b aria-hidden="true">B</b><span>Bold</span></button></div><div class="days" id="days"></div><button class="button add-day" id="addDay"><svg aria-hidden="true"><use href="#i-plus"/></svg>Προσθήκη ημερομηνίας</button><p class="field-help">Πρόσθεσε ώρες ή διαστήματα, π.χ. 10:00, 14:30 ή 17:00–20:00.</p></div>
-<hr class="section-rule"><div class="field"><div class="field-toolbar"><label for="cta"><span>Πρόσκληση για κράτηση</span></label><button type="button" class="bold-toggle" data-bold="cta" aria-label="Έντονη γραφή: Πρόσκληση για κράτηση" aria-pressed="false" title="Έντονη γραφή σε όλο το πεδίο"><b aria-hidden="true">B</b><span>Bold</span></button></div><input id="cta" data-field="cta" maxlength="100" placeholder="Στείλε μου DM για το ραντεβού σου"></div><div class="field"><div class="field-toolbar"><label for="note"><span>Μικρή σημείωση <small class="optional">Προαιρετικό</small></span></label><button type="button" class="bold-toggle" data-bold="note" aria-label="Έντονη γραφή: Σημείωση" aria-pressed="false" title="Έντονη γραφή σε όλο το πεδίο"><b aria-hidden="true">B</b><span>Bold</span></button></div><input id="note" data-field="note" maxlength="120" placeholder="Οι θέσεις είναι περιορισμένες"></div>
+<div id="scheduleControls"><div class="schedule-format"><span>Επίλεξε κείμενο σε ένα πεδίο ωρών</span><button type="button" class="bold-toggle" data-bold="times" aria-label="Έντονη γραφή: διαθέσιμες ώρες" aria-pressed="false"><b aria-hidden="true">B</b><span>Bold</span></button></div><div class="days" id="days"></div><button class="button add-day" id="addDay"><svg aria-hidden="true"><use href="#i-plus"/></svg>Προσθήκη ημερομηνίας</button><p class="field-help">Πρόσθεσε ώρες ή διαστήματα, π.χ. 10:00, 14:30 ή 17:00–20:00.</p></div>
+<hr class="section-rule"><div class="field"><div class="field-toolbar"><label for="cta"><span>Πρόσκληση για κράτηση</span></label><button type="button" class="bold-toggle" data-bold="cta" aria-label="Έντονη γραφή: Πρόσκληση για κράτηση" aria-pressed="false" title="Επίλεξε κείμενο και πάτησε Bold"><b aria-hidden="true">B</b><span>Bold</span></button></div><input id="cta" data-field="cta" maxlength="300" placeholder="Στείλε μου DM για το ραντεβού σου"></div><div class="field"><div class="field-toolbar"><label for="note"><span>Μικρή σημείωση <small class="optional">Προαιρετικό</small></span></label><button type="button" class="bold-toggle" data-bold="note" aria-label="Έντονη γραφή: Σημείωση" aria-pressed="false" title="Επίλεξε κείμενο και πάτησε Bold"><b aria-hidden="true">B</b><span>Bold</span></button></div><input id="note" data-field="note" maxlength="360" placeholder="Οι θέσεις είναι περιορισμένες"></div>
 </div>
 <div id="panel-style" class="panel" role="tabpanel" aria-labelledby="tab-style" hidden>
 <div class="section-head"><h3>Η παλέτα σου</h3><small id="paletteName">Soft Blush</small></div><div class="palette-grid" id="palettes" role="group" aria-label="Χρωματική παλέτα"></div>
@@ -83,8 +83,8 @@ main{max-width:1420px;margin:0 auto;padding:34px 40px 20px}.intro{display:flex;j
 </div>
 <div id="panel-brand" class="panel" role="tabpanel" aria-labelledby="tab-brand" hidden>
 <div class="brand-helper">Πρόσθεσε τον τρόπο επικοινωνίας σου για να ξέρουν πού θα σε βρουν.</div>
-<div class="field"><div class="field-toolbar"><label for="handle"><span>Instagram handle <small class="optional">Προαιρετικό</small></span></label><button type="button" class="bold-toggle" data-bold="handle" aria-label="Έντονη γραφή: Instagram" aria-pressed="false" title="Έντονη γραφή σε όλο το πεδίο"><b aria-hidden="true">B</b><span>Bold</span></button></div><input id="handle" data-field="handle" maxlength="60" placeholder="@dafniss_nails" autocapitalize="none" spellcheck="false"></div>
-<div class="field"><div class="field-toolbar"><label for="contact"><span>Τηλέφωνο / επικοινωνία <small class="optional">Προαιρετικό</small></span></label><button type="button" class="bold-toggle" data-bold="contact" aria-label="Έντονη γραφή: Επικοινωνία" aria-pressed="false" title="Έντονη γραφή σε όλο το πεδίο"><b aria-hidden="true">B</b><span>Bold</span></button></div><input id="contact" data-field="contact" maxlength="70" placeholder="π.χ. 69Χ ΧΧΧ ΧΧΧΧ"></div>
+<div class="field"><div class="field-toolbar"><label for="handle"><span>Instagram handle <small class="optional">Προαιρετικό</small></span></label><button type="button" class="bold-toggle" data-bold="handle" aria-label="Έντονη γραφή: Instagram" aria-pressed="false" title="Επίλεξε κείμενο και πάτησε Bold"><b aria-hidden="true">B</b><span>Bold</span></button></div><input id="handle" data-field="handle" maxlength="180" placeholder="@dafniss_nails" autocapitalize="none" spellcheck="false"></div>
+<div class="field"><div class="field-toolbar"><label for="contact"><span>Τηλέφωνο / επικοινωνία <small class="optional">Προαιρετικό</small></span></label><button type="button" class="bold-toggle" data-bold="contact" aria-label="Έντονη γραφή: Επικοινωνία" aria-pressed="false" title="Επίλεξε κείμενο και πάτησε Bold"><b aria-hidden="true">B</b><span>Bold</span></button></div><input id="contact" data-field="contact" maxlength="210" placeholder="π.χ. 69Χ ΧΧΧ ΧΧΧΧ"></div>
 <p class="tip">Τα στοιχεία παραμένουν σε αυτόν τον browser. Δεν ανεβαίνουν σε server και δεν απαιτείται λογαριασμός.</p>
 </div>
 <div class="editor-footer"><small>Φτιαγμένο για το δικό σου beauty brand.</small><button class="button quiet small" id="reset"><svg aria-hidden="true"><use href="#i-reset"/></svg>Επαναφορά</button></div>
@@ -137,20 +137,20 @@ const PRESETS = {
 };
 function dateString(date){return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;}
 function offsetDate(days){const d=new Date();d.setDate(d.getDate()+days);return dateString(d);}
-function defaults(){return {version:1,type:'availability',...PRESETS.availability,title:'Λίγος χρόνος, μόνο για εσένα.',handle:'dafniss_nails',contact:'',bold:{cta:true},palette:'blush',background:'abstract',font:'elegant',template:'soft',format:'story',textScale:100,days:[{date:offsetDate(1),times:'10:00, 12:30, 17:00'},{date:offsetDate(3),times:'11:00, 16:00'},{date:offsetDate(5),times:'10:30, 13:00, 18:00'}]};}
+function defaults(){return {version:1,type:'availability',...PRESETS.availability,title:'Λίγος χρόνος, μόνο για εσένα.',handle:'dafniss_nails',contact:'',inlineBold:true,palette:'blush',background:'abstract',font:'elegant',template:'soft',format:'story',textScale:100,days:[{date:offsetDate(1),times:'10:00, 12:30, 17:00'},{date:offsetDate(3),times:'11:00, 16:00'},{date:offsetDate(5),times:'10:30, 13:00, 18:00'}]};}
 const LIMITS={title:90,subtitle:100,message:600,cta:100,note:120,handle:60,contact:70};
 function validDate(value){if(typeof value!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(value))return false;const d=new Date(value+'T12:00:00');return !isNaN(d)&&dateString(d)===value;}
 // Validate persisted values, so a stale or malformed draft never breaks the app.
 function sanitize(raw){
  if(!raw||typeof raw!=='object'||raw.version!==1)throw new Error('Invalid draft');
  const value=defaults();
- for(const [key,max] of Object.entries(LIMITS))if(typeof raw[key]==='string')value[key]=raw[key].slice(0,max);
+ for(const [key,max] of Object.entries(LIMITS))if(typeof raw[key]==='string')value[key]=raw[key].slice(0,max*3);
  for(const [key,choices] of Object.entries({type:['availability','announcement','reminder','custom'],palette:PALETTES.map(p=>p.id),background:BACKGROUNDS.map(b=>b.id),font:FONTS.map(f=>f.id),template:TEMPLATES.map(t=>t.id),format:Object.keys(FORMATS)}))if(choices.includes(raw[key]))value[key]=raw[key];
  if(value.handle==='@your.beauty.studio')value.handle='dafniss_nails';
- if(raw.bold&&typeof raw.bold==='object')for(const key of [...Object.keys(LIMITS),'times'])if(typeof raw.bold[key]==='boolean')value.bold[key]=raw.bold[key];
+ if(raw.inlineBold!==true&&raw.bold)for(const key of Object.keys(LIMITS))if(raw.bold[key]===true&&value[key])value[key]='**'+value[key]+'**';
  if(typeof raw.showSchedule==='boolean')value.showSchedule=raw.showSchedule;
  if(Number.isFinite(raw.textScale))value.textScale=Math.max(85,Math.min(120,Math.round(raw.textScale/5)*5));
- if(Array.isArray(raw.days))value.days=raw.days.slice(0,MAX_DAYS).filter(d=>d&&typeof d==='object').map(d=>({date:validDate(d.date)?d.date:'',times:typeof d.times==='string'?d.times.slice(0,100):''}));
+ if(Array.isArray(raw.days))value.days=raw.days.slice(0,MAX_DAYS).filter(d=>d&&typeof d==='object').map(d=>({date:validDate(d.date)?d.date:'',times:typeof d.times==='string'?(raw.inlineBold!==true&&raw.bold?.times?'**'+d.times.slice(0,100)+'**':d.times.slice(0,300)):''}));
  return value;
 }
 let state=defaults(), storageAvailable=true, saveTimer, frame, undoAction=null, lastRender={minSize:40}, isExporting=false;
@@ -163,10 +163,9 @@ function saveDraft(manual=false){clearTimeout(saveTimer);try{localStorage.setIte
 function changed(){updateSelections();cancelAnimationFrame(frame);frame=requestAnimationFrame(render);$('#saveStatus').textContent=storageAvailable?'Μη αποθηκευμένες αλλαγές…':'Η τοπική αποθήκευση δεν είναι διαθέσιμη';clearTimeout(saveTimer);saveTimer=setTimeout(()=>saveDraft(),600);}
 function fillFields(){$$('[data-field]').forEach(el=>{const value=state[el.dataset.field];if(el.type==='checkbox')el.checked=value;else el.value=value;});renderDays();updateSelections();render();}
 function updateSelections(){
- $$('[data-bold]').forEach(button=>{const key=button.dataset.bold,active=Boolean(state.bold[key]);button.setAttribute('aria-pressed',String(active));const input=$('#'+key);if(input)input.style.fontWeight=active?'700':'400';});
- $$('.day-row input[type=text]').forEach(input=>input.style.fontWeight=state.bold.times?'700':'400');
+ updateBoldButtons();
  for(const key of ['palette','background','font','template'])$$(`[data-${key}]`).forEach(button=>button.setAttribute('aria-pressed',String(button.dataset[key]===state[key])));
- $('#titleCount').textContent=`${state.title.length} / 90`;$('#scaleValue').textContent=state.textScale+'%';$('#paletteName').textContent=PALETTES.find(p=>p.id===state.palette).name;
+ $('#titleCount').textContent=`${plainText(state.title).length} / 90`;$('#scaleValue').textContent=state.textScale+'%';$('#paletteName').textContent=PALETTES.find(p=>p.id===state.palette).name;
  $('#scheduleControls').hidden=!state.showSchedule;$('#dayCount').textContent=state.days.length===1?'1 ημέρα':`${state.days.length} ημέρες`;$('#addDay').disabled=state.days.length>=MAX_DAYS;
  $('#addDay').title=state.days.length>=MAX_DAYS?'Έως 12 ημέρες ανά story':'';
  $('#currentTemplate').textContent=TEMPLATES.find(t=>t.id===state.template).name;
@@ -178,7 +177,7 @@ function renderDays(){
  if(!state.days.length){const empty=document.createElement('p');empty.className='empty';empty.textContent='Η πρώτη σου διαθέσιμη μέρα ξεκινά εδώ.';root.append(empty);}
  state.days.forEach((day,index)=>{
   const row=document.createElement('div');row.className='day-row';
-  row.innerHTML=`<label><span>Ημερομηνία</span><input type="date" aria-label="Ημερομηνία ${index+1}" min="1900-01-01" max="9999-12-31"><div class="weekday"></div></label><label><span>Διαθέσιμες ώρες</span><input type="text" maxlength="100" placeholder="10:00, 14:30" aria-label="Ώρες ημέρας ${index+1}"></label><button class="icon-button" aria-label="Αφαίρεση ημέρας ${index+1}" title="Αφαίρεση ημέρας"><svg aria-hidden="true"><use href="#i-trash"/></svg></button>`;
+  row.innerHTML=`<label><span>Ημερομηνία</span><input type="date" aria-label="Ημερομηνία ${index+1}" min="1900-01-01" max="9999-12-31"><div class="weekday"></div></label><label><span>Διαθέσιμες ώρες</span><input type="text" maxlength="300" placeholder="10:00, 14:30" aria-label="Ώρες ημέρας ${index+1}"></label><button class="icon-button" aria-label="Αφαίρεση ημέρας ${index+1}" title="Αφαίρεση ημέρας"><svg aria-hidden="true"><use href="#i-trash"/></svg></button>`;
   const [date,times]=$$('input',row);date.value=day.date;times.value=day.times;$('.weekday',row).textContent=weekday(day.date);
   date.addEventListener('input',()=>{day.date=date.value;$('.weekday',row).textContent=weekday(day.date);changed();});
   times.addEventListener('input',()=>{day.times=times.value;changed();});
@@ -197,7 +196,39 @@ function applyPreset(key){
  notify('Το έτοιμο κείμενο εφαρμόστηκε.',()=>{state=before;fillFields();changed();});
 }
 $$('[data-preset]').forEach(button=>button.addEventListener('click',()=>applyPreset(button.dataset.preset)));
-$$('[data-bold]').forEach(button=>button.addEventListener('click',()=>{const key=button.dataset.bold;state.bold[key]=!state.bold[key];changed();}));
+// Keep native inputs and selection: **markers** are visible only while editing.
+let selectedTimes=null;
+function boldTarget(button){return button.dataset.bold==='times'?selectedTimes:$('#'+button.dataset.bold);}
+function selectedTextModel(input){
+ if(!input)return null;const runs=richRuns(input.value),plain=runs.map(run=>run.text).join('');
+ const position=raw=>runs.reduce((n,run)=>n+Math.max(0,Math.min(run.text.length,raw-run.sourceStart)),0);
+ return {plain,flags:runs.flatMap(run=>Array(run.text.length).fill(run.bold)),a:position(input.selectionStart),b:position(input.selectionEnd)};
+}
+function selectionIsBold(input){const model=selectedTextModel(input);return Boolean(model&&model.a<model.b&&model.flags.slice(model.a,model.b).every(Boolean));}
+function updateBoldButtons(){ $$('[data-bold]').forEach(button=>button.setAttribute('aria-pressed',String(selectionIsBold(boldTarget(button))))); }
+function toggleSelectionBold(input){
+ if(!input||!input.isConnected)return notify('Επίλεξε πρώτα τη λέξη ή τη φράση μέσα στο πεδίο που θέλεις να κάνεις bold.');
+ const model=selectedTextModel(input),{plain,flags,a,b}=model;
+ if(a===b){input.focus({preventScroll:true});return notify('Επίλεξε πρώτα μια λέξη ή φράση και μετά πάτησε Bold.');}
+ const active=!flags.slice(a,b).every(Boolean);flags.fill(active,a,b);
+ let value='',bold=false,start=0,end=0;
+ for(let i=0;i<plain.length;i++){
+  if(flags[i]!==bold){value+='**';bold=flags[i];}
+  if(i===a)start=value.length;
+  value+=plain[i];if(i+1===b)end=value.length;
+ }
+ if(bold)value+='**';
+ if(value.length>input.maxLength)return notify('Δεν υπάρχει αρκετός χώρος για τη μορφοποίηση. Μίκρυνε λίγο το κείμενο.');
+ input.value=value;input.focus({preventScroll:true});input.setSelectionRange(start,end);input.dispatchEvent(new Event('input',{bubbles:true}));updateBoldButtons();
+}
+$$('[data-bold]').forEach(button=>{
+ button.addEventListener('pointerdown',event=>event.preventDefault());
+ button.addEventListener('click',()=>toggleSelectionBold(boldTarget(button)));
+});
+document.addEventListener('focusin',event=>{if(event.target.matches('.day-row input[type=text]'))selectedTimes=event.target;});
+document.addEventListener('selectionchange',updateBoldButtons);
+document.addEventListener('keydown',event=>{const input=event.target;if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='b'&&(input.matches('input[data-field]:not([type]),textarea[data-field]')||input.matches('.day-row input[type=text]'))){event.preventDefault();toggleSelectionBold(input);}});
+
 $('#saveDraft').addEventListener('click',()=>saveDraft(true));
 $('#reset').addEventListener('click',()=>{const before=structuredClone(state);state=defaults();fillFields();changed();notify('Επιστροφή στο αρχικό σχέδιο.',()=>{state=before;fillFields();changed();});});
 window.addEventListener('pagehide',()=>{clearTimeout(saveTimer);try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));}catch(error){/* Storage is optional. */}});
@@ -224,9 +255,35 @@ function splitLines(ctx,text,maxWidth){
  }
  return lines;
 }
+function richRuns(text){
+ const runs=[];const pattern=/\*\*([\s\S]+?)\*\*/g;let from=0,match;
+ while((match=pattern.exec(text))){if(match.index>from)runs.push({text:text.slice(from,match.index),bold:false,sourceStart:from});runs.push({text:match[1],bold:true,sourceStart:match.index+2});from=pattern.lastIndex;}
+ if(from<text.length)runs.push({text:text.slice(from),bold:false,sourceStart:from});return runs;
+}
+function plainText(text){return richRuns(text).map(run=>run.text).join('');}
+// Measure and draw the same mixed-weight runs, including wrapping and explicit newlines.
+function richLines(ctx,text,width,size,font,weight){
+ const runs=richRuns(text);let offset=0;for(const run of runs){run.start=offset;offset+=run.text.length;run.end=offset;}
+ const plain=runs.map(run=>run.text).join(''),lines=[];let current=[],used=0;
+ const measure=run=>{ctx.font=`${run.bold?'700':weight} ${size}px ${font}`;return {...run,width:ctx.measureText(run.text).width};};
+ const push=()=>{lines.push({runs:current,width:used});current=[];used=0;};
+ for(const match of plain.matchAll(/\n|[^\S\n]+|[^\s]+/g)){
+  const word=match[0];if(word==='\n'){push();continue;}if(/^\s+$/.test(word))continue;
+  const a=match.index,b=a+word.length;
+  const pieces=runs.filter(run=>run.end>a&&run.start<b).map(run=>measure({text:plain.slice(Math.max(a,run.start),Math.min(b,run.end)),bold:run.bold}));
+  const wordWidth=pieces.reduce((sum,run)=>sum+run.width,0),space=measure({text:' ',bold:false});
+  if(current.length&&used+space.width+wordWidth>width)push();
+  if(current.length){current.push(space);used+=space.width;}
+  for(const piece of pieces){
+   if(piece.width<=width){if(used+piece.width>width&&current.length)push();current.push(piece);used+=piece.width;}
+   else for(const char of [...piece.text]){const part=measure({text:char,bold:piece.bold});if(used+part.width>width&&current.length)push();current.push(part);used+=part.width;}
+  }
+ }
+ if(current.length||plain.endsWith('\n'))push();return lines;
+}
 function textBlock(ctx,text,x,y,width,size,font,color,align='center',lineHeight=1.35,weight='normal',draw=true){
- if(!text.trim())return 0;ctx.font=`${weight} ${size}px ${font}`;const lines=splitLines(ctx,text,width);ctx.fillStyle=color;ctx.textAlign=align;ctx.textBaseline='top';
- if(draw)lines.forEach((value,i)=>ctx.fillText(value,align==='center'?x+width/2:x,y+i*size*lineHeight));
+ if(!plainText(text).trim())return 0;const lines=richLines(ctx,text,width,size,font,weight);ctx.fillStyle=color;ctx.textAlign='left';ctx.textBaseline='top';
+ if(draw)lines.forEach((line,i)=>{let cursor=align==='center'?x+(width-line.width)/2:x;for(const run of line.runs){ctx.font=`${run.bold?'700':weight} ${size}px ${font}`;ctx.fillText(run.text,cursor,y+i*size*lineHeight);cursor+=run.width;}});
  return lines.length*size*lineHeight;
 }
 function flower(ctx,x,y,size,color){ctx.save();ctx.translate(x,y);ctx.strokeStyle=color;ctx.lineWidth=2.1;for(let i=0;i<5;i++){ctx.save();ctx.rotate(i*Math.PI*2/5);ctx.beginPath();ctx.ellipse(0,-size*.39,size*.22,size*.4,0,0,Math.PI*2);ctx.stroke();ctx.restore();}ctx.beginPath();ctx.arc(0,0,size*.12,0,Math.PI*2);ctx.stroke();ctx.restore();}
@@ -255,7 +312,7 @@ function drawStory(canvas,s,thumbnail=false){
  const heightAvailable=bottom-top;
  // Build the same measured composition repeatedly until it fits inside the export safe area.
  function compose(scale,draw){
-  const weight=key=>s.bold?.[key]?'700':'normal';
+  const weight=key=>'normal';
   let y=0,minSize=Infinity;const gap=26*scale;const base=(s.textScale/100)*scale;
   function text(value,size,font=f.body,color=p.ink,leading=1.4,weight='normal'){
    if(!value.trim())return;const actual=size*base;minSize=Math.min(minSize,actual);y+=textBlock(ctx,value,x,top+y,w,actual,font,color,align,leading,weight,draw);y+=gap;
@@ -273,7 +330,7 @@ function drawStory(canvas,s,thumbnail=false){
     const times=day.times.trim()||'Στείλε μου για ώρες';
     const rowSize=33*base,labelSize=28*base;minSize=Math.min(minSize,labelSize);
     const rowPad=23*scale,dateWidth=176*scale,innerW=w-2*rowPad-dateWidth-24*scale;
-    ctx.font=`${weight('times')} ${rowSize}px ${f.body}`;const timeLines=splitLines(ctx,times,innerW);
+    ctx.font=`${weight('times')} ${rowSize}px ${f.body}`;const timeLines=richLines(ctx,times,innerW,rowSize,f.body,'normal');
     ctx.font=`normal ${labelSize}px ${f.body}`;const dateLines=splitLines(ctx,dateText,dateWidth),dayLines=splitLines(ctx,dayText,dateWidth);
     const dateHeight=(dateLines.length+dayLines.length)*labelSize*1.35+6*scale;
     const rh=Math.max(99*scale,dateHeight+rowPad*2,timeLines.length*rowSize*1.4+rowPad*2);
@@ -315,7 +372,7 @@ function render(){
  $('#layoutWarning').textContent=badDates?'Κάποια ημέρα δεν έχει ημερομηνία. Συμπλήρωσέ τη πριν κατεβάσεις την εικόνα.':dense?'Το κείμενο είναι πολύ μικρό για άνετη ανάγνωση. Μείωσε το μήνυμα ή τις ημέρες, ή διάλεξε Story 9:16.':'';
  $$('[data-export]').forEach(b=>b.disabled=badDates||isExporting);
  const summary=[state.subtitle,state.title,state.message,...(state.showSchedule?state.days.map(d=>`${weekday(d.date)} ${d.date}: ${d.times||'Στείλε μου για ώρες'}`):[]),state.cta,state.note,state.handle,state.contact].filter(Boolean).join('. ');
- $('#storyDescription').textContent=summary;
+ $('#storyDescription').textContent=plainText(summary);
 }
 async function exportImage(){
  if(isExporting)return;render();if(state.showSchedule&&state.days.some(d=>!validDate(d.date)))return;
