@@ -83,7 +83,7 @@ main{max-width:1420px;margin:0 auto;padding:34px 40px 20px}.intro{display:flex;j
 </div>
 <div id="panel-brand" class="panel" role="tabpanel" aria-labelledby="tab-brand" hidden>
 <div class="brand-helper">Πρόσθεσε τον τρόπο επικοινωνίας σου για να ξέρουν πού θα σε βρουν.</div>
-<div class="field"><div class="field-toolbar"><label for="handle"><span>Instagram handle <small class="optional">Προαιρετικό</small></span></label><button type="button" class="bold-toggle" data-bold="handle" aria-label="Έντονη γραφή: Instagram" aria-pressed="false" title="Επίλεξε κείμενο και πάτησε Bold"><b aria-hidden="true">B</b><span>Bold</span></button></div><input id="handle" data-field="handle" maxlength="180" placeholder="@dafniss_nails" autocapitalize="none" spellcheck="false"></div>
+<div class="field"><div class="field-toolbar"><label for="handle"><span>Instagram handle <small class="optional">Προαιρετικό</small></span></label><button type="button" class="bold-toggle" data-bold="handle" aria-label="Έντονη γραφή: Instagram" aria-pressed="false" title="Επίλεξε κείμενο και πάτησε Bold"><b aria-hidden="true">B</b><span>Bold</span></button></div><input id="handle" data-field="handle" maxlength="180" placeholder="@dafni_nailcare" autocapitalize="none" spellcheck="false"></div>
 <div class="field"><div class="field-toolbar"><label for="contact"><span>Τηλέφωνο / επικοινωνία <small class="optional">Προαιρετικό</small></span></label><button type="button" class="bold-toggle" data-bold="contact" aria-label="Έντονη γραφή: Επικοινωνία" aria-pressed="false" title="Επίλεξε κείμενο και πάτησε Bold"><b aria-hidden="true">B</b><span>Bold</span></button></div><input id="contact" data-field="contact" maxlength="210" placeholder="π.χ. 69Χ ΧΧΧ ΧΧΧΧ"></div>
 <p class="tip">Τα στοιχεία παραμένουν σε αυτόν τον browser. Δεν ανεβαίνουν σε server και δεν απαιτείται λογαριασμός.</p>
 </div>
@@ -137,7 +137,7 @@ const PRESETS = {
 };
 function dateString(date){return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;}
 function offsetDate(days){const d=new Date();d.setDate(d.getDate()+days);return dateString(d);}
-function defaults(){return {version:1,type:'availability',...PRESETS.availability,title:'Λίγος χρόνος, μόνο για εσένα.',handle:'dafniss_nails',contact:'',inlineBold:true,palette:'blush',background:'abstract',font:'elegant',template:'soft',format:'story',textScale:100,days:[{date:offsetDate(1),times:'10:00, 12:30, 17:00'},{date:offsetDate(3),times:'11:00, 16:00'},{date:offsetDate(5),times:'10:30, 13:00, 18:00'}]};}
+function defaults(){return {version:1,type:'availability',...PRESETS.availability,title:'Λίγος χρόνος, μόνο για εσένα.',handle:'dafni_nailcare',contact:'',inlineBold:true,palette:'blush',background:'abstract',font:'elegant',template:'soft',format:'story',textScale:100,days:[{date:offsetDate(1),times:'10:00, 12:30, 17:00'},{date:offsetDate(3),times:'11:00, 16:00'},{date:offsetDate(5),times:'10:30, 13:00, 18:00'}]};}
 const LIMITS={title:90,subtitle:100,message:600,cta:100,note:120,handle:60,contact:70};
 function validDate(value){if(typeof value!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(value))return false;const d=new Date(value+'T12:00:00');return !isNaN(d)&&dateString(d)===value;}
 // Validate persisted values, so a stale or malformed draft never breaks the app.
@@ -146,7 +146,13 @@ function sanitize(raw){
  const value=defaults();
  for(const [key,max] of Object.entries(LIMITS))if(typeof raw[key]==='string')value[key]=raw[key].slice(0,max*3);
  for(const [key,choices] of Object.entries({type:['availability','announcement','reminder','custom'],palette:PALETTES.map(p=>p.id),background:BACKGROUNDS.map(b=>b.id),font:FONTS.map(f=>f.id),template:TEMPLATES.map(t=>t.id),format:Object.keys(FORMATS)}))if(choices.includes(raw[key]))value[key]=raw[key];
- if(value.handle==='@your.beauty.studio')value.handle='dafniss_nails';
+ // Upgrade the previous Instagram name in saved drafts without changing custom handles.
+ const handleRuns=richRuns(value.handle),oldHandle=plainText(value.handle).trim();
+ if(['dafniss_nails','@dafniss_nails','@your.beauty.studio'].includes(oldHandle)){
+  const fullyBold=handleRuns.filter(run=>run.text.trim()).every(run=>run.bold);
+  const newHandle=(oldHandle.startsWith('@')?'@':'')+'dafni_nailcare';
+  value.handle=fullyBold?'**'+newHandle+'**':newHandle;
+ }
  if(raw.inlineBold!==true&&raw.bold)for(const key of Object.keys(LIMITS))if(raw.bold[key]===true&&value[key])value[key]='**'+value[key]+'**';
  if(typeof raw.showSchedule==='boolean')value.showSchedule=raw.showSchedule;
  if(Number.isFinite(raw.textScale))value.textScale=Math.max(85,Math.min(120,Math.round(raw.textScale/5)*5));
